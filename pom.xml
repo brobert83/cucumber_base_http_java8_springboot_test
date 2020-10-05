@@ -77,9 +77,9 @@
         </dependency>
 
         <dependency>
-            <groupId>org.robs</groupId>
-            <artifactId>cucumber_base_http_java8</artifactId>
-            <version>${cucumber_base_http_java8.version}</version>
+            <groupId>io.github.brobert83</groupId>
+            <artifactId>cucumber-http-java8</artifactId>
+            <version>0.1.0</version>
             <scope>test</scope>
         </dependency>
 

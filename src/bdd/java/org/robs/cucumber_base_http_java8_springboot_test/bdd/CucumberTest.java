@@ -8,7 +8,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "src/bdd/resources/features",
         plugin = {"pretty", "html:target/cucumber.html"},
-        extraGlue = {"org.robs.cucumber_base_http_java8"}
+        extraGlue = {"io.github.brobert83.cucumber_http_java8"}
 )
 public class CucumberTest {
 

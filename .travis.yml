@@ -1,1 +1,8 @@
 language: java
+jdk:
+  - openjdk8
+install: mvn clean package
+cache:
+  directories:
+    - ".autoconf"
+    - "$HOME/.m2"

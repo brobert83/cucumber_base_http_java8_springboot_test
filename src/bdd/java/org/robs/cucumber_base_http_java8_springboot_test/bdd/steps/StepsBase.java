@@ -2,7 +2,7 @@ package org.robs.cucumber_base_http_java8_springboot_test.bdd.steps;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.cucumber.spring.CucumberContextConfiguration;
-import org.robs.cucumber_base_http_java8.request_handlers.unirest.HttpUnirestSpringConfig;
+import io.github.brobert83.cucumber_http_java8.request_handlers.unirest.CucumberBaseSpringConfig;
 import org.robs.cucumber_base_http_java8_springboot_test.CucumberBaseHttpJava8SpringBootTestApplication;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.web.server.LocalServerPort;
@@ -20,7 +20,7 @@ import java.util.function.Supplier;
         webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT,
         classes = {
                 StepsBase.SpringTestConfig.class,
-                HttpUnirestSpringConfig.class,
+                CucumberBaseSpringConfig.class,
                 CucumberBaseHttpJava8SpringBootTestApplication.class
         }
 )

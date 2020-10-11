@@ -2,7 +2,7 @@ Feature: Some api endpoints
 
   Scenario: GET endpoint
 
-    Given the request method is 'GET'
+    Given a 'GET' request
     Given the request has header 'Content-Type'='application/json'
     When the request is sent to '/api/234'
     Then the server responds with status code '200'
@@ -13,7 +13,7 @@ Feature: Some api endpoints
 
   Scenario: GET endpoint, no good
 
-    Given the request method is 'GET'
+    Given a 'GET' request
     Given the request has header 'Content-Type'='application/json'
     When the request is sent to '/api/2352646'
     Then the server responds with status code '500'
@@ -21,7 +21,7 @@ Feature: Some api endpoints
 
   Scenario: POST endpoint
 
-    Given the request method is 'POST'
+    Given a 'POST' request
     Given the request has header 'Content-Type'='application/json'
     Given the request body is '{"name":"eve","status":"new"}'
     When the request is sent to '/api'
@@ -31,7 +31,7 @@ Feature: Some api endpoints
 
   Scenario: POST endpoint, no good
 
-    Given the request method is 'POST'
+    Given a 'POST' request
     Given the request has header 'Content-Type'='application/json'
     Given the request body is '{"name":"steve","status":"new"}'
     When the request is sent to '/api'

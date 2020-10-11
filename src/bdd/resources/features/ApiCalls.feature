@@ -11,6 +11,16 @@ Feature: Some api endpoints
 
     Then the body size is '33'
 
+  Scenario: GET endpoint (xml response)
+
+    Given a 'GET' request
+    Given the request has header 'Content-Type'='application/json'
+    Given the request has header 'Accept'='application/xml'
+    When the request is sent to '/api/234'
+    Then the server responds with status code '200'
+    Then the response has header 'Content-Type'='application/xml'
+    Then the response body matches '<DataObject><name>john</name><status>active</status></DataObject>'
+
   Scenario: GET endpoint, no good
 
     Given a 'GET' request

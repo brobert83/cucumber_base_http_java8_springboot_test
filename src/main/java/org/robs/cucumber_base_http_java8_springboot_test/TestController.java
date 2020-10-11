@@ -4,6 +4,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
+import static org.springframework.http.MediaType.APPLICATION_XML_VALUE;
 
 @RequestMapping("/api")
 @RestController
@@ -20,10 +21,10 @@ public class TestController {
     }
 
 
-    @RequestMapping(path = "/{id}", method = RequestMethod.GET, produces = APPLICATION_JSON_VALUE)
-    public String getSomething(@PathVariable("id") int id) {
+    @RequestMapping(path = "/{id}", method = RequestMethod.GET, produces = {APPLICATION_JSON_VALUE, APPLICATION_XML_VALUE})
+    public DataObject getSomething(@PathVariable("id") int id) {
 
-        if (id == 234) return "{\"name\":\"john\",\"status\":\"active\"}";
+        if (id == 234) return new DataObject("john","active");
 
         throw new RuntimeException("no good");
     }
